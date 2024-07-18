@@ -57,8 +57,13 @@ function NextQuestion(){
     }
     const answer = document.getElementsByName('answer');
     for (var i = 0; i < answer.length; i++) {
+        if(answer[i].checked){
+            var userSelect = answer[i].value;
+            console.log(quizData[index-1][`answer${userSelect}`]);
+        }
         answer[i].checked = false;
-    }
+        submit.disabled = true;
+    } 
 }
 
 NextQuestion();
