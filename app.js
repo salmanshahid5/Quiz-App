@@ -31,6 +31,27 @@ const quizData = [
         d: "none of the above",
         correct: "b",
     },
+    {
+        question: 'What is the correct HTML for adding a background color?',
+        a: '<body bg="yellow">',
+        b: '<background>yellow</background>',
+        c: '<body style="background-color:yellow;">',
+        correct: 'c'
+    },
+    {
+        question: 'Choose the correct HTML element to define important text:',
+        a: '<strong>',
+        b: '<b>',
+        c: '<i>',
+        correct: 'a'
+    },
+    {
+        question: 'Choose the correct HTML element to define emphasized text:',
+        a: '<italic>',
+        b: '<i>',
+        c: '<em>',
+        correct: "c"
+    },
 ];
 
 // varible initialization
@@ -58,8 +79,10 @@ function NextQuestion(){
     const answer = document.getElementsByName('answer');
     for (var i = 0; i < answer.length; i++) {
         if(answer[i].checked){
-            var userSelect = answer[i].value;
-            console.log(quizData[index-1][`answer${userSelect}`]);
+            var userSelect = answer[i].id;
+            var correctAns = quizData[index -1].correct;
+            console.log(userSelect);
+            console.log(correctAns);
         }
         answer[i].checked = false;
         submit.disabled = true;
